@@ -111,7 +111,7 @@ def prog_save(req):
     if config.pp is None:
         return [config.pp_not_init, ""]
 
-    if len(config.pp.PROG_LIST) is 0:
+    if len(config.pp.PROG_LIST) == 0:
         return ["Program list is empty", ""]
 
     program=''
@@ -136,7 +136,7 @@ def prog_send_robot(req):
     return [""]
 
 def prog_start(req):
-    if len(req.post_processor) is 0:
+    if len(req.post_processor) == 0:
         return ["Post processor name is empty"]
     elif req.post_processor == "Motoman":
         config.pp = MotomanPost()
@@ -151,7 +151,7 @@ def prog_start(req):
 
     config.pp.PROG_TARGETS = []
 
-    if len(req.program_name) is 0:
+    if len(req.program_name) == 0:
         return ["Program name is empty"]
     config.pp.ProgStart(req.program_name)
 

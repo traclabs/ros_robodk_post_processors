@@ -49,10 +49,10 @@ def macro(req):
     if not isMotomanPP():
         return [not_motoman]
 
-    if req.number is 0:
+    if req.number == 0:
         return ["number cannot be zero"]
 
-    if req.mf is 0:
+    if req.mf == 0:
         return ["mdf cannot be zero"]
 
     config.pp.Macro(req.number, req.mf, req.args)

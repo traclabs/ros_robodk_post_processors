@@ -184,7 +184,7 @@ class RobotPost(object):
         self.PROG_NAMES.append(progname_i)
 
     def SetFolder(self, foldername):
-        if len(foldername) is not 0:
+        if len(foldername) != 0:
             self.FOLDERNAME = get_safe_name(foldername)
         else:
             self.FOLDERNAME = ''
@@ -201,7 +201,7 @@ class RobotPost(object):
         header = ''
         header += '/JOB' + '\n'
         header += '//NAME %s' % progname + '\n'
-        if len(self.FOLDERNAME) is not 0:
+        if len(self.FOLDERNAME) != 0:
             header += '///FOLDERNAME %s' % self.FOLDERNAME + '\n'
         header += '//POS' + '\n'
         header += '///NPOS %i,0,0,%i,0,0' % (self.C_COUNT, self.P_COUNT)
@@ -544,13 +544,13 @@ class RobotPost(object):
         self.addline(macro_line)
 
     def Arcon(self, asf_number = 0):
-        if asf_number is 0:
+        if asf_number == 0:
             self.addline('ARCON')
         else:
             self.addline('ARCON ASF#(%s)' % asf_number)
 
     def Arcof(self, aef_number = 0):
-        if aef_number is 0:
+        if aef_number == 0:
             self.addline('ARCOF')
         else:
             self.addline('ARCOF AEF#(%s)' % aef_number)

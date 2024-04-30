@@ -1324,6 +1324,7 @@ try:
     import tkFileDialog as filedialog
 except ImportError:
     ## Python 3.X
+    import tkinter
     from tkinter import filedialog
 
 def getOpenFile():
